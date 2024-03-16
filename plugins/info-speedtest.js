@@ -5,7 +5,7 @@ const handler = async (m) => {
   await conn.reply(m.chat, global.wait, m);
   let o;
   try {
-    o = await exec('python3 speed.py --secure --share');
+    o = await exec('python3 speed.py');
   } catch (e) {
     o = e;
   } finally {
@@ -19,3 +19,4 @@ handler.tags = ['info'];
 handler.command = /^(speedtest?|test?speed)$/i;
 
 export default handler;
+ 
