@@ -1,5 +1,6 @@
+
 # TÉRMINOS, PRIVACIDAD, Y CONDICIONES DE USO.
- 
+
 > **_Última actualización 22 de diciembre de 2023_**
 
 ## MODIFICACIONES Y ACTUALIZACIONES
@@ -130,3 +131,5 @@ Si es propietario/a de una cuenta que actúa como Bot, tiene el control de los d
 ### Usuarios Terceros
 Los usuarios terceros, en este contexto, se refieren a los Sub Bots, que están sujetos al control de los propietarios. Estos usuarios pueden recopilar datos a través de la función Sub Bot, y no podemos garantizar cómo se utilizarán dichos datos.
 </details>
+
+
