@@ -80,45 +80,45 @@ months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto
 }
 lugarFecha.locale('es', formatoFecha)
 const horarioFecha = lugarFecha.format('dddd, DD [de] MMMM [del] YYYY || HH:mm A').replace(/^\w/, (c) => c.toUpperCase())
-let menu = `${lenguajeGB['smsConfi2']()} *${user.genero === 0 ? '👤' : user.genero == 'Ocultado 🕶️' ? `🕶️` : user.genero == 'Mujer 🚺' ? `🚺` : user.genero == 'Hombre 🚹' ? `🚹` : '👤'} ${user.registered === true ? user.name : username}*${(conn.user.jid == global.conn.user.jid ? '' : `\n*SUB BOT DE: https://wa.me/${global.conn.user.jid.split`@`[0]}*`) || ''}
-𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔
-\`\`\`${horarioFecha}\`\`\`
-➪➪➪➪➪➪➪➪➪➪➪➪➪➪➪
-Ꙭ *${lenguajeGB['smsTotalUsers']()}* ➺ _${Object.keys(global.db.data.users).length}_ 
-✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
-Ꙭ *Registrados »* ${rtotalreg}/${totalreg}   
-✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
-Ꙭ *${lenguajeGB['smsUptime']()}* ➺ _${uptime}_ 
-✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
-Ꙭ *${lenguajeGB['smsVersion']()}* ➺ _${vs}_
-✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
-Ꙭ *${lenguajeGB['smsMode']()} ➺* _${global.opts['self'] ? `${lenguajeGB['smsModePrivate']().charAt(0).toUpperCase() + lenguajeGB['smsModePrivate']().slice(1).toLowerCase()}` : `${lenguajeGB['smsModePublic']().charAt(0).toUpperCase() + lenguajeGB['smsModePublic']().slice(1).toLowerCase()}`}_
-✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
-Ꙭ *${lenguajeGB['smsBanChats']()}* ➺ _${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}_ 
-✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
-Ꙭ *${lenguajeGB['smsBanUsers']()}* ➺ _${Object.entries(global.db.data.users).filter(user => user[1].banned).length}_
-𝑶𝒘𝒏𝒆𝒓:𝑨𝒅𝒓𝒊𝒂𝒏𝑶𝒇𝒄𝒊𝒂𝒍 𝑵𝒖𝒎 +595976126756
-𝑮𝒊𝒕𝒉𝒖𝒃:${md}
-𝒀𝒖𝒕𝒖𝒃𝒆:${yt}
-𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎:${ig}
-𝑮𝒓𝒖𝒑𝒐𝑶𝒇𝒄:${nn}
-𝑪𝒂𝒏𝒂𝒍𝑶𝒇𝒄:${nn2}
-        𖣘 ${gt} 𖣘
-        🥀 *❀𝐼𝑛𝑓𝑜 𝑑𝑒𝑙 𝑢𝑠𝑢𝑎𝑟𝑖𝑜❀* 🥀
-💐 *𝑹𝒆𝒈𝒖𝒊𝒔𝒕𝒓𝒐📝* ${user.registered === true ? `_${user.registroC === true ? 'Completo 🗂️' : 'Rápido 📑'}_` : '❌ _Sin registro_'}
-💐 *𝑬𝒔𝒕𝒂𝒅𝒐 𝒅𝒆𝒍 𝒖𝒔𝒖𝒂𝒓𝒊𝒐* ${typeof user.miestado !== 'string' ? '❌ _' + usedPrefix + 'miestado_' : '_Me siento ' + user.miestado + '_'}
-💐 *𝑹𝒆𝒈𝒖𝒊𝒔𝒕𝒓𝒂𝒅𝒐𝒔* ${user.registered === true ? '✅' : '❌ _' + usedPrefix + 'verificar_'}
-💐 *${lenguajeGB['smsBotonM7']().charAt(0).toUpperCase() + lenguajeGB['smsBotonM7']().slice(1).toLowerCase()} »* ${user.premiumTime > 0 ? '✅' : '❌ _' + usedPrefix + 'pase premium_'}
-💐 *${lenguajeGB['smsBotonM5']().charAt(0).toUpperCase() + lenguajeGB['smsBotonM5']().slice(1).toLowerCase()} »* ${role}
-💐 *${lenguajeGB['smsBotonM6']().charAt(0).toUpperCase() + lenguajeGB['smsBotonM6']().slice(1).toLowerCase()} »* ${emoji} || ${user.exp - min}/${xp}
-💐 *${lenguajeGB['smsPareja']()}* ${pareja ? `\n*»* ${name} 💕 ${conn.getName(pareja)}` : `🛐 ${lenguajeGB['smsResultPareja']()}`}
-💐 *𝑷𝒂𝒔𝒂𝒕𝒊𝒆𝒎𝒑𝒐 𝒅𝒆𝒍 𝒖𝒔𝒖𝒂𝒓𝒊𝒐* ➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
-💐 *𝑬𝒙𝒑𝒆𝒓𝒊𝒆𝒏𝒄𝒊𝒂 ➟* ${exp} ⚡
-💐 *𝑫𝒊𝒂𝒎𝒂𝒏𝒕𝒆𝒔 ➟* ${limit} 💎
-💐 *𝑪𝒐𝒊𝒏𝒔 ➟* ${money} 💲
-💐 *𝑻𝒐𝒌𝒆𝒏𝒔 ➟* ${joincount} 🧿
+let menu = `> ${lenguajeGB['smsConfi2']()} *${user.genero === 0 ? '👤' : user.genero == 'Ocultado 🕶️' ? `🕶️` : user.genero == 'Mujer 🚺' ? `🚺` : user.genero == 'Hombre 🚹' ? `🚹` : '👤'} ${user.registered === true ? user.name : username}*${(conn.user.jid == global.conn.user.jid ? '' : `\n*SUB BOT DE: https://wa.me/${global.conn.user.jid.split`@`[0]}*`) || ''}
+> 𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔𖣔
+> \`\`\`${horarioFecha}\`\`\`
+> ➪➪➪➪➪➪➪➪➪➪➪➪➪➪➪
+> Ꙭ *${lenguajeGB['smsTotalUsers']()}* ➺ _${Object.keys(global.db.data.users).length}_ 
+> ✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
+> Ꙭ *Registrados »* ${rtotalreg}/${totalreg}   
+> ✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
+> Ꙭ *${lenguajeGB['smsUptime']()}* ➺ _${uptime}_ 
+> ✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
+> Ꙭ *${lenguajeGB['smsVersion']()}* ➺ _${vs}_
+> ✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
+> Ꙭ *${lenguajeGB['smsMode']()} ➺* _${global.opts['self'] ? `${lenguajeGB['smsModePrivate']().charAt(0).toUpperCase() + lenguajeGB['smsModePrivate']().slice(1).toLowerCase()}` : `${lenguajeGB['smsModePublic']().charAt(0).toUpperCase() + lenguajeGB['smsModePublic']().slice(1).toLowerCase()}`}_
+> ✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
+> Ꙭ *${lenguajeGB['smsBanChats']()}* ➺ _${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}_ 
+> ✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
+> Ꙭ *${lenguajeGB['smsBanUsers']()}* ➺ _${Object.entries(global.db.data.users).filter(user => user[1].banned).length}_
+> 𝑶𝒘𝒏𝒆𝒓:𝑨𝒅𝒓𝒊𝒂𝒏𝑶𝒇𝒄𝒊𝒂𝒍 𝑵𝒖𝒎 +595976126756
+> 𝑮𝒊𝒕𝒉𝒖𝒃:${md}
+> 𝒀𝒖𝒕𝒖𝒃𝒆:${yt}
+> 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎:${ig}
+> 𝑮𝒓𝒖𝒑𝒐𝑶𝒇𝒄:${nn}
+> 𝑪𝒂𝒏𝒂𝒍𝑶𝒇𝒄:${nn2}
+> 𖣘 ${gt} 𖣘
+> 🥀 *❀𝐼𝑛𝑓𝑜 𝑑𝑒𝑙 𝑢𝑠𝑢𝑎𝑟𝑖𝑜❀* 🥀
+> 💐 *𝑹𝒆𝒈𝒖𝒊𝒔𝒕𝒓𝒐📝* ${user.registered === true ? `_${user.registroC === true ? 'Completo 🗂️' : 'Rápido 📑'}_` : '❌ _Sin registro_'}
+> 💐 *𝑬𝒔𝒕𝒂𝒅𝒐 𝒅𝒆𝒍 𝒖𝒔𝒖𝒂𝒓𝒊𝒐* ${typeof user.miestado !== 'string' ? '❌ _' + usedPrefix + 'miestado_' : '_Me siento ' + user.miestado + '_'}
+> 💐 *𝑹𝒆𝒈𝒖𝒊𝒔𝒕𝒓𝒂𝒅𝒐𝒔* ${user.registered === true ? '✅' : '❌ _' + usedPrefix + 'verificar_'}
+> 💐 *${lenguajeGB['smsBotonM7']().charAt(0).toUpperCase() + lenguajeGB['smsBotonM7']().slice(1).toLowerCase()} »* ${user.premiumTime > 0 ? '✅' : '❌ _' + usedPrefix + 'pase premium_'}
+> 💐 *${lenguajeGB['smsBotonM5']().charAt(0).toUpperCase() + lenguajeGB['smsBotonM5']().slice(1).toLowerCase()} »* ${role}
+> 💐 *${lenguajeGB['smsBotonM6']().charAt(0).toUpperCase() + lenguajeGB['smsBotonM6']().slice(1).toLowerCase()} »* ${emoji} || ${user.exp - min}/${xp}
+> 💐 *${lenguajeGB['smsPareja']()}* ${pareja ? `\n*»* ${name} 💕 ${conn.getName(pareja)}` : `🛐 ${lenguajeGB['smsResultPareja']()}`}
+> 💐 *𝑷𝒂𝒔𝒂𝒕𝒊𝒆𝒎𝒑𝒐 𝒅𝒆𝒍 𝒖𝒔𝒖𝒂𝒓𝒊𝒐* ➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
+> 💐 *𝑬𝒙𝒑𝒆𝒓𝒊𝒆𝒏𝒄𝒊𝒂 ➟* ${exp} ⚡
+> 💐 *𝑫𝒊𝒂𝒎𝒂𝒏𝒕𝒆𝒔 ➟* ${limit} 💎
+> 💐 *𝑪𝒐𝒊𝒏𝒔 ➟* ${money} 💲
+> 💐 *𝑻𝒐𝒌𝒆𝒏𝒔 ➟* ${joincount} 🧿
 ${readMore}
-╭━         *᯾𝑰𝒏𝒇𝒐 𝒅𝒆𝒍 𝒃𝒐𝒕᯾*
+> ╭━         *᯾𝑰𝒏𝒇𝒐 𝒅𝒆𝒍 𝒃𝒐𝒕᯾*
 ┃🌺 _${usedPrefix}cuentas_
 ┃🌺 _${usedPrefix}grupos_
 ┃🌺 _${usedPrefix}donar_
@@ -130,22 +130,25 @@ ${readMore}
 ┃🌺 _${usedPrefix}velocidad_
 ┃🌺 _Bot_ 
 ┃🌺 _términos y condiciones_
-╭━         *〔 𝑭𝒖𝒏𝒄𝒊𝒐𝒏 𝒅𝒆 𝒔𝒆𝒓𝒃𝒐𝒕 〕*
+> ╭━         *〔 𝑭𝒖𝒏𝒄𝒊𝒐𝒏𝒆𝒔 𝑵𝒖𝒆𝒗𝒂𝒔 〕*
+┃⚠️ _${usedPrefix}killmenu_
+┃⚠️ _${usedPrefix}histori_
+> ╭━         *〔 𝑭𝒖𝒏𝒄𝒊𝒐𝒏 𝒅𝒆 𝒔𝒆𝒓𝒃𝒐𝒕 〕*
 ┃🖥 _${usedPrefix}serbot_
 ┃🖥 _${usedPrefix}serbot --code_
 ┃🖥 _${usedPrefix}bots_
 ┃🖥 _${usedPrefix}detener_
 ┃🖥 _${usedPrefix}bcbot_
-╭━         *〔 𝑹𝒆𝒑𝒐𝒓𝒕𝒆𝒔 𝒐 𝑭𝒂𝒍𝒍𝒐𝒔 〕*
+> ╭━         *〔 𝑹𝒆𝒑𝒐𝒓𝒕𝒆𝒔 𝒐 𝑭𝒂𝒍𝒍𝒐𝒔 〕*
 ┃ 📮 _${usedPrefix}reporte *texto*_
 ┃ 📮 _${usedPrefix}report *texto*_
-╭━          *〔 𝑼𝒏𝒆 𝒂𝒍 𝒃𝒐𝒕 𝒂 𝒕𝒖 𝒈𝒓𝒖𝒑𝒐 〕 *
+> ╭━          *〔 𝑼𝒏𝒆 𝒂𝒍 𝒃𝒐𝒕 𝒂 𝒕𝒖 𝒈𝒓𝒖𝒑𝒐 〕 *
 ┃🌟 _${usedPrefix}botemporal *enlace* *cantidad*_
-╭━          *〔 𝑷𝒓𝒆𝒎𝒊𝒖𝒏 〕*
+> ╭━          *〔 𝑷𝒓𝒆𝒎𝒊𝒖𝒏 〕*
 ┃🎫 _${usedPrefix}listapremium_
 ┃🎫 _${usedPrefix}pase premium_
 ┃🎫 _${usedPrefix}pass premium_
-╭━         *〔 𝑱𝒖𝒆𝒈𝒐𝒔 〕*
+> ╭━         *〔 𝑱𝒖𝒆𝒈𝒐𝒔 〕*
 ┃🤹‍ _${usedPrefix}mates_
 ┃🤹‍ _${usedPrefix}lanzar *cara* o *cruz*
 ┃🤹‍ _${usedPrefix}ppt *piedra,papel,tijera*_
@@ -183,16 +186,16 @@ ${readMore}
 ┃🤹‍ _${usedPrefix}reto_
 ┃🤹‍ _${usedPrefix}multijuegos_
 ┃🤹‍ _${usedPrefix}juegos_
-╭━    〔 𝑰𝒏𝒕𝒆𝒍𝒊𝒈𝒆𝒏𝒄𝒊𝒂 𝑨𝒓𝒕𝒊𝒇𝒊𝒄𝒊𝒂𝒍 〕*
+> ╭━    〔 𝑰𝒏𝒕𝒆𝒍𝒊𝒈𝒆𝒏𝒄𝒊𝒂 𝑨𝒓𝒕𝒊𝒇𝒊𝒄𝒊𝒂𝒍 〕*
 ┃🦋 _${usedPrefix}okgoogle *texto*_
 ┃🦋 _${usedPrefix}siri *texto*_
 ┃🦋 _${usedPrefix}bixby *texto*_
-╭━      [ 𝑪𝒐𝒏𝒇𝒊𝒈𝒖𝒓𝒂𝒄𝒊𝒐𝒏 ]*
-┃🔧 _${usedPrefix}on *:* off welcome*_
-┃🔧 _${usedPrefix}on *:* off detect*_
-┃🔧 _${usedPrefix}on *:* off autolevelup*_
-┃🔧 _${usedPrefix}on *:* off restrict*_
-┃🔧 _${usedPrefix}on *:* off anticall*_
+> ╭━      [ 𝑪𝒐𝒏𝒇𝒊𝒈𝒖𝒓𝒂𝒄𝒊𝒐𝒏 ]*
+┃🔧 _${usedPrefix}on *:* off *welcome*_
+┃🔧 _${usedPrefix}on *:* off *detect*_
+┃🔧 _${usedPrefix}on *:* off *autolevelup*_
+┃🔧 _${usedPrefix}on *:* off *restrict*_
+┃🔧 _${usedPrefix}on *:* off *anticall*_
 ┃🔧 _${usedPrefix}on *:* off *public*_
 ┃🔧 _${usedPrefix}on *:* off *autoread*_
 ┃🔧 _${usedPrefix}on *:* off *temporal*_
@@ -215,11 +218,11 @@ ${readMore}
 ┃🔧 _${usedPrefix}on *:* off *antitwitter*_
 ┃🔧 _${usedPrefix}on *:* off *pconly*_
 ┃🔧 _${usedPrefix}on *:* off *gconly*_
-╭━      *〔 𝑮𝒓𝒖𝒑𝒐𝒔-𝑹𝒆𝒔𝒖𝒎𝒆𝒏 〕*
+> ╭━      *〔 𝑮𝒓𝒖𝒑𝒐𝒔-𝑹𝒆𝒔𝒖𝒎𝒆𝒏 〕*
 ┃🌼 _${usedPrefix}configuracion_
 ┃🌼 _${usedPrefix}settings_
 ┃🌼 _${usedPrefix}vergrupo_
-╭━       *[ 𝑫𝒆𝒔𝒄𝒂𝒓𝒈𝒂𝒔 ]*
+> ╭━       *[ 𝑫𝒆𝒔𝒄𝒂𝒓𝒈𝒂𝒔 ]*
 ┃⬇️ _${usedPrefix}imagen | image *texto*_
 ┃⬇️ _${usedPrefix}pinterest | dlpinterest *texto*_
 ┃⬇️ _${usedPrefix}wallpaper|wp *texto*_
@@ -247,13 +250,13 @@ ${readMore}
 ┃⬇️ _${usedPrefix}morse decodificar *morse*_
 ┃⬇️ _${usedPrefix}fraseromantica_
 ┃⬇️ _${usedPrefix}historia_
-╭━      *[ 𝑪𝒉𝒂𝒕 𝑺𝒆𝒄𝒓𝒆𝒕𝒐 ]*
+> ╭━      *[ 𝑪𝒉𝒂𝒕 𝑺𝒆𝒄𝒓𝒆𝒕𝒐 ]*
 ┃👤 _${usedPrefix}chatanonimo_
 ┃👤 _${usedPrefix}anonimoch_
 ┃👤 _${usedPrefix}start_
 ┃👤 _${usedPrefix}next_
 ┃👤 _${usedPrefix}leave_
-╭━      *[ 𝑨𝒋𝒖𝒔𝒕𝒆𝒔 𝒅𝒆 𝒈𝒓𝒖𝒑𝒐𝒔 ]*
+> ╭━      *[ 𝑨𝒋𝒖𝒔𝒕𝒆𝒔 𝒅𝒆 𝒈𝒓𝒖𝒑𝒐𝒔 ]*
 ┃🛠 _${usedPrefix}add *numero*_
 ┃🛠 _${usedPrefix}kick *@tag*_
 ┃🛠 _${usedPrefix}grupo *abrir : cerrar*_
@@ -283,22 +286,22 @@ ${readMore}
 ┃🛠 _${usedPrefix}bienvenida *texto*_
 ┃🛠 _${usedPrefix}despedida *texto*_
 ┃🛠 _${usedPrefix}nuevoenlace_
-╭━     *[ 𝑷𝒂𝒓𝒆𝒋𝒂𝒔 ]*
+> ╭━     *[ 𝑷𝒂𝒓𝒆𝒋𝒂𝒔 ]*
 ┃❤️ _${usedPrefix}listaparejas_
 ┃❤️ _${usedPrefix}mipareja_
 ┃❤️ _${usedPrefix}pareja *@tag*_
 ┃❤️ _${usedPrefix}aceptar *@tag*_
 ┃❤️ _${usedPrefix}rechazar *@tag*_
 ┃❤️ _${usedPrefix}terminar *@tag*_
-╭━     *[ 𝑽𝒐𝒕𝒂𝒄𝒊𝒐𝒏𝒆𝒔 ]*
+> ╭━     *[ 𝑽𝒐𝒕𝒂𝒄𝒊𝒐𝒏𝒆𝒔 ]*
 ┃📝 _${usedPrefix}crearvoto *texto*_
 ┃📝 _${usedPrefix}sivotar_
 ┃📝 _${usedPrefix}novotar_
 ┃📝 _${usedPrefix}vervotos_
 ┃📝 _${usedPrefix}delvoto_
-╭━     *[ +18 ]*
+> ╭━     *[ +18 ]*
 ┃🔞➺ _${usedPrefix}hornymenu_
-╭━     *[ 𝑪𝒐𝒏𝒗𝒆𝒓𝒕𝒊𝒅𝒐𝒓𝒆𝒔 ]*
+> ╭━     *[ 𝑪𝒐𝒏𝒗𝒆𝒓𝒕𝒊𝒅𝒐𝒓𝒆𝒔 ]*
 ┃🖼 _${usedPrefix}jpg *sticker*_
 ┃🖼 _${usedPrefix}toanime *foto*_
 ┃🖼 _${usedPrefix}tomp3 *video o nota de voz*_
@@ -307,10 +310,10 @@ ${readMore}
 ┃🖼 _${usedPrefix}tourl *video, imagen*_
 ┃🖼 _${usedPrefix}toenlace  *video, imagen o audio*_
 ┃🖼 _${usedPrefix}tts *texto*_
-╭━      *[ 𝑳𝒐𝒈𝒐𝒔 ]*
+> ╭━      *[ 𝑳𝒐𝒈𝒐𝒔 ]*
 ┃🏞 _${usedPrefix}logos *efecto texto*_
 ┃🏞 _${usedPrefix}menulogos2_
-╭━      *[ 𝑬𝒇𝒆𝒄𝒕𝒐𝒔 ]*
+> ╭━      *[ 𝑬𝒇𝒆𝒄𝒕𝒐𝒔 ]*
 ┃✨ _${usedPrefix}simpcard *@tag*_
 ┃✨ _${usedPrefix}hornycard *@tag*_
 ┃✨ _${usedPrefix}lolice *@tag*_
@@ -318,7 +321,7 @@ ${readMore}
 ┃✨ _${usedPrefix}itssostupid_
 ┃✨ _${usedPrefix}pixelar_
 ┃✨ _${usedPrefix}blur_
-╭━      *[ 𝑹𝒂𝒏𝒅𝒐𝒎 ]*
+> ╭━      *[ 𝑹𝒂𝒏𝒅𝒐𝒎 ]*
 ┃🍃 _${usedPrefix}chica_
 ┃🍃 _${usedPrefix}chico_
 ┃🍃 _${usedPrefix}cristianoronaldo_
@@ -369,7 +372,7 @@ ${readMore}
 ┃🍃 _${usedPrefix}sasuke_
 ┃🍃 _${usedPrefix}sakura_
 ┃🍃 _${usedPrefix}cosplay_
-╭━     *[ 𝑴𝒐𝒅𝒊𝒇𝒊𝒄𝒂𝒓 𝑨𝒖𝒅𝒊𝒐𝒔 ]*
+> ╭━     *[ 𝑴𝒐𝒅𝒊𝒇𝒊𝒄𝒂𝒓 𝑨𝒖𝒅𝒊𝒐𝒔 ]*
 ┃🎤 _${usedPrefix}bass_
 ┃🎤 _${usedPrefix}blown_
 ┃🎤 _${usedPrefix}deep_
@@ -382,7 +385,7 @@ ${readMore}
 ┃🎤 _${usedPrefix}slow_
 ┃🎤 _${usedPrefix}smooth_
 ┃🎤 _${usedPrefix}tupai_
-╭━     *[ 𝑩𝒖𝒔𝒒𝒖𝒆𝒅𝒂𝒔 ]*
+> ╭━     *[ 𝑩𝒖𝒔𝒒𝒖𝒆𝒅𝒂𝒔 ]*
 ┃🔍 _${usedPrefix}animeinfo *texto*_
 ┃🔍 _${usedPrefix}mangainfo *texto*_
 ┃🔍 _${usedPrefix}google *texto*_
@@ -390,9 +393,9 @@ ${readMore}
 ┃🔍 _${usedPrefix}letra *texto*_
 ┃🔍 _${usedPrefix}yts *texto*_
 ┃🔍 _${usedPrefix}wikipedia *texto*_
-╭━     *[ 𝑨𝒖𝒅𝒊𝒐𝒔  ]*
+> ╭━     *[ 𝑨𝒖𝒅𝒊𝒐𝒔  ]*
 ┃🎙 _${usedPrefix}audios_
-╭━     *[ 𝑯𝒆𝒓𝒓𝒂𝒎𝒊𝒆𝒏𝒕𝒂𝒔 ]*
+> ╭━     *[ 𝑯𝒆𝒓𝒓𝒂𝒎𝒊𝒆𝒏𝒕𝒂𝒔 ]*
 ┃🧰 _${usedPrefix}afk *motivo*_
 ┃🧰 _${usedPrefix}acortar *url*_
 ┃🧰 _${usedPrefix}calc *operacion math*_
@@ -406,7 +409,7 @@ ${readMore}
 ┃🧰 _${usedPrefix}morse decodificar *morse*_
 ┃🧰 _${usedPrefix}encuesta | poll *Motivo*_
 ┃🧰 _${usedPrefix}horario_
-╭━     *[ 𝑭𝒖𝒏𝒄𝒊𝒐𝒏𝒆𝒔 𝑹𝑷𝑮 ]*
+> ╭━     *[ 𝑭𝒖𝒏𝒄𝒊𝒐𝒏𝒆𝒔 𝑹𝑷𝑮 ]*
 ┃💲 _${usedPrefix}botemporal *enlace* *cantidad*_
 ┃💲 _${usedPrefix}pase premium_
 ┃💲 _${usedPrefix}listapremium_
@@ -442,9 +445,9 @@ ${readMore}
 ┃💲 _${usedPrefix}mes_
 ┃💲 _${usedPrefix}cofre_
 ┃💲 _${usedPrefix}trabajar|work_
-╭━     *[ 𝑵𝒊𝒗𝒆𝒍𝒆𝒔 ]*
+> ╭━     *[ 𝑵𝒊𝒗𝒆𝒍𝒆𝒔 ]*
 ┃🥇 _${usedPrefix}top_
-╭━     *[ 𝑺𝒕𝒊𝒄𝒌𝒆𝒓𝒔 𝒚 𝑭𝒊𝒍𝒕𝒓𝒐𝒔 ]*
+> ╭━     *[ 𝑺𝒕𝒊𝒄𝒌𝒆𝒓𝒔 𝒚 𝑭𝒊𝒍𝒕𝒓𝒐𝒔 ]*
 ┃🔮 _${usedPrefix}s *imagen o video*_
 ┃🔮 _${usedPrefix}s *url de tipo jpg*_
 ┃🔮 _${usedPrefix}emojimix *🌼+🌺*_
@@ -462,16 +465,16 @@ ${readMore}
 ┃🔮 _${usedPrefix}stickermarker *efecto : responder a imagen*_
 ┃🔮 _${usedPrefix}stickerfilter *efecto : responder a imagen*_
 ┃🔮 _${usedPrefix}cs *:* cs2_
-╭━     *[ 𝑴𝒐𝒅𝒊𝒇𝒊𝒄𝒂𝒓 𝑺𝒕𝒊𝒄𝒌𝒆𝒓𝒔 ]*
+> ╭━     *[ 𝑴𝒐𝒅𝒊𝒇𝒊𝒄𝒂𝒓 𝑺𝒕𝒊𝒄𝒌𝒆𝒓𝒔 ]*
 ┃🎨 _${usedPrefix}wm *packname|author*_
 ┃🎨 _${usedPrefix}wm *texto1|texto2*_
-╭━     *[ 𝑺𝒕𝒊𝒄𝒌𝒆𝒓𝒔 ]*
+> ╭━     *[ 𝑺𝒕𝒊𝒄𝒌𝒆𝒓𝒔 ]*
 ┃🌌 _${usedPrefix}palmaditas *@tag*_
 ┃🌌 _${usedPrefix}bofetada *@tag*_
 ┃🌌 _${usedPrefix}golpear *@tag*_
 ┃🌌 _${usedPrefix}besar *@tag*_
 ┃🌌 _${usedPrefix}alimentar *@tag*_
-╭━     *[ 𝑷𝒓𝒐𝒑𝒊𝒆𝒕𝒂𝒓𝒊𝒐 ]*
+> ╭━     *[ 𝑷𝒓𝒐𝒑𝒊𝒆𝒕𝒂𝒓𝒊𝒐 ]*
 ┃👑 _${usedPrefix}join *enlace*_
 ┃👑 _${usedPrefix}dardiamantes *cantidad*_
 ┃👑 _${usedPrefix}darxp *cantidad*_
@@ -499,7 +502,7 @@ ${readMore}
 ┃👑 _${usedPrefix}añadirdiamantes *@tag cantidad*_
 ┃👑 _${usedPrefix}añadirxp *@tag cantidad*_
 ┃👑 _${usedPrefix}añadircoins *@tag cantidad*_
-*╰━━━━━━━━━━━━⬣*`.trim()
+> *╰━━━━━━━━━━━━⬣*`.trim()
 await conn.sendFile(m.chat, gataVidMenu.getRandom(), 'gata.mp4', menu, fkontak)
 } catch (e) {
 await m.reply(lenguajeGB['smsMalError3']() + '\n*' + lenguajeGB.smsMensError1() + '*\n*' + usedPrefix + `${lenguajeGB.lenguaje() == 'es' ? 'reporte' : 'report'}` + '* ' + `${lenguajeGB.smsMensError2()} ` + usedPrefix + command)

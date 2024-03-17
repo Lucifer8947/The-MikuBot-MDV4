@@ -5,34 +5,25 @@ import axios from 'axios'
 import { youtubedl, youtubedlv2 } from '@bochilteam/scraper'
 let handler = async (m, { conn, command, args, text, usedPrefix }) => {
 let q, v, yt, dl_url, ttl, size, lolhuman, lolh, n, n2, n3, n4, cap, qu, currentQuality   
-if (!text) throw `${lenguajeGB['smsAvisoMG']()}${mid.smsMalused4}\n*${usedPrefix + command} Billie Eilish - Bellyache*`
+if (!text) throw `> ${lenguajeGB['smsAvisoMG']()}> 𝙀𝙨𝙘𝙧𝙞𝙗𝙖 𝙚𝙡 𝙉𝙤𝙢𝙗𝙧𝙚 𝙤 𝙏𝙞𝙩𝙪𝙡𝙤\n> 𝙀𝙟𝙚𝙢𝙥𝙡𝙤\n> *${usedPrefix + command} Nothing's Gonna Stop Us Now*`
 try {
 const yt_play = await search(args.join(" "))
 let additionalText = ''
-if (command === 'play') { 
-additionalText = '𝘼𝙐𝘿𝙄𝙊 🔊'
+if (command === 'play') {
+additionalText = '𝘼𝙪𝙙𝙞𝙤 🔊'
 } else if (command === 'play2') {
-additionalText = '𝙑𝙄𝘿𝙀𝙊 🎥'}
-let captionvid = `𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*
+additionalText = '𝙑𝙞𝙙𝙚𝙤 🎥'}
+let captionvid = `> ༒︎ఌ︎ఌ︎ ✿ ${vs} ✿︎ ఌ︎ఌ︎༒︎*
 
-ও ${mid.smsYT1}
-»  ${yt_play[0].title}
-﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
-ও ${mid.smsYT15}
-» ${yt_play[0].ago}
-﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
-ও ${mid.smsYT5}
-» ${secondString(yt_play[0].duration.seconds)}
-﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
-ও  ${mid.smsYT10}
-» ${MilesNumber(yt_play[0].views)}
-﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
-ও  ${mid.smsYT4}
-» ${yt_play[0].url}
-﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
-ও ${mid.smsAguarde(additionalText)}
+> *❦︎ 𝙉𝙤𝙢𝙗𝙧𝙚*  ${yt_play[0].title}
+> *❦︎ 𝙋𝙪𝙗𝙡𝙞𝙘𝙖𝙘𝙤́𝙣* ${yt_play[0].ago}
+> *❦︎ 𝘿𝙪𝙧𝙖𝙘𝙞𝙤́𝙣* ${secondString(yt_play[0].duration.seconds)}
+> *❦︎ 𝙑𝙞𝙨𝙞𝙩𝙖𝙨* ${MilesNumber(yt_play[0].views)}
+> *❦︎𝙐𝙧𝙡/𝙀𝙣𝙡𝙖𝙘𝙚* ${yt_play[0].url}
+> ᪥᪥᪥᪥᪥᪥᪥᪥᪥᪥᪥᪥᪥᪥᪥᪥᪥᪥᪥
+> *❦︎𝙀𝙣𝙫𝙞𝙖𝙣𝙙𝙤 ${additionalText}, 𝙖𝙜𝙪𝙖𝙧𝙙𝙚 𝙪𝙣 𝙢𝙤𝙢𝙚𝙣𝙩𝙤 𝙥𝙤𝙧 𝙛𝙖𝙫𝙤𝙧*
 
-*𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*`  
+> ༒︎ఌ︎ఌ︎ ✿ ${vs} ✿︎ ఌ︎ఌ︎༒︎*`  
 await conn.sendMessage(m.chat, {
 text: captionvid,
 contextInfo: {
@@ -129,7 +120,7 @@ const yt = await youtubedl(v).catch(async _ => await youtubedlv2(v))
 const dl_url = await yt.video[q].download()
 const ttl = await yt.title
 const size = await yt.video[q].fileSizeH
-await await conn.sendMessage(m.chat, { video: { url: dl_url }, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `╭━❰  ${wm}  ❱━⬣\n┃ 💜 ${mid.smsYT1}\n┃ ${ttl}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, thumbnail: await fetch(yt.thumbnail) }, { quoted: m })
+await await conn.sendMessage(m.chat, { video: { url: dl_url }, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `> ╭━❰  ${wm}  ❱━⬣\n┃ 💐 𝙉𝙤𝙢𝙗𝙧𝙚\n┃ ${ttl}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, thumbnail: await fetch(yt.thumbnail) }, { quoted: m })
 } catch {   
 try {  
 let mediaa = await ytMp4(yt_play[0].url)
@@ -142,14 +133,14 @@ let n = lolh.result.title || 'error'
 let n2 = lolh.result.link
 let n3 = lolh.result.size
 let n4 = lolh.result.thumbnail
-await conn.sendMessage(m.chat, { video: { url: n2 }, fileName: `${n}.mp4`, mimetype: 'video/mp4', caption: `╭━❰  ${wm}  ❱━⬣\n┃ 💜 ${mid.smsYT1}\n┃ ${n}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, thumbnail: await fetch(n4) }, { quoted: m })
+await conn.sendMessage(m.chat, { video: { url: n2 }, fileName: `${n}.mp4`, mimetype: 'video/mp4', caption: `> ╭━❰  ${wm}  ❱━⬣\n┃ 💐 𝙉𝙤𝙢𝙗𝙧𝙚\n┃ ${n}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, thumbnail: await fetch(n4) }, { quoted: m })
 } catch {
 }}}    
 }} catch {
 handler.limit = 0
 }}
 handler.command = ['play', 'play2']
-handler.exp = 500
+handler.exp = 0
 handler.limit = 1
 export default handler
 
